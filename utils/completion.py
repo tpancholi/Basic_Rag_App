@@ -81,7 +81,7 @@ def generate_response(
 			f"temperature must be a float, got {type(temperature).__name__}"
 		)
 	temperature = float(temperature)
-	if 0.0 <= temperature <= 1.0:
+	if not 0.0 <= temperature <= 1.0:
 		raise ValueError("Temperature must be a value between 0.0 and 1.0.")
 	if not model:
 		raise ValueError("Model must be a non-empty string.")
